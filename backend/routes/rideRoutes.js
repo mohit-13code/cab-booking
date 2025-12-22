@@ -2,19 +2,20 @@ const express = require("express");
 const Driver = require("../models/Driver");
 const Ride = require("../models/Ride");
 const dijkstra = require("../algorithms/dijkstra");
+const graph = require("../algorithms/graph");
 
 const router = express.Router();
 
 router.post("/request", async (req, res) => {
   const { userId, sourceNode, destinationNode } = req.body;
 
-  const graph = {
-    0: { 1: 4, 2: 1 },
-    1: { 0: 4, 3: 1 },
-    2: { 0: 1, 3: 5, 4: 3 },
-    3: { 1: 1, 2: 5, 4: 3 },
-    4: { 2: 3, 3: 3 }
-  };
+  // const graph = {
+  //   0: { 1: 4, 2: 1 },
+  //   1: { 0: 4, 3: 1 },
+  //   2: { 0: 1, 3: 5, 4: 3 },
+  //   3: { 1: 1, 2: 5, 4: 3 },
+  //   4: { 2: 3, 3: 3 }
+  // };
 
   const distances = dijkstra(graph, sourceNode);
 
