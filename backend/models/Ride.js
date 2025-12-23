@@ -6,7 +6,8 @@ const rideSchema = new mongoose.Schema({
   driver:String,
   sourceNode: Number,
   destinationNode: Number,
-  fare: Number
+  comingFare: Number,
+  totalFare: Number
 });
 
 module.exports = mongoose.model("Ride", rideSchema);

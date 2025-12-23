@@ -42,14 +42,17 @@ router.post("/request", async (req, res) => {
     return res.status(400).json({ msg: "No drivers available" });
 
   const fare = distances[destinationNode] * 10;
-  const comingFare =minDist * 10;
+  const comingFare = minDist * 10;
+  const totalFare=fare+comingFare;
+  
   const ride = new Ride({
     userId,
     driverId: nearestDriver._id,
     driver: nearestDriver.name,
     sourceNode,
     destinationNode,
-    fare 
+    comingFare,
+    totalFare 
   });
 
   nearestDriver.available = false;
