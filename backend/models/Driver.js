@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const driverSchema = new mongoose.Schema({
-  name: String,
-  locationNode: Number,
+  name: {type: String,required: true},
+  locationNode: {type: Number,default: 0},
   available: { type: Boolean, default: true }
 });
 

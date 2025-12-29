@@ -33,8 +33,9 @@ router.post("/request", auth, async (req, res) => {
   let minDist = Infinity;
 
   drivers.forEach(driver => {
-    const d = distances[driver.locationNode];
-    if (d < minDist) {
+    const locationNode = driver.locationNode !== undefined ? driver.locationNode : 0;
+    const d = distances[locationNode];
+    if (d !== undefined && typeof d === 'number' && d < minDist) {
       minDist = d;
       nearestDriver = driver;
     }
