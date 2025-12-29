@@ -3,11 +3,13 @@ const Driver = require("../models/Driver");
 const Ride = require("../models/Ride");
 const dijkstra = require("../algorithms/dijkstra");
 const graph = require("../algorithms/graph");
+const auth = require("../middleware/auth");
 
 const router = express.Router();
 
-router.post("/request", async (req, res) => {
-  const { userId, sourceNode, destinationNode } = req.body;
+router.post("/request", auth, async (req, res) => {
+  const { sourceNode, destinationNode } = req.body;
+  const userId = req.user.id;
 
   // const graph = {
   //   0: { 1: 4, 2: 1 },
