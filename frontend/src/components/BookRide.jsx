@@ -11,6 +11,7 @@ function BookRide() {
   const [error, setError] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isRegistering, setIsRegistering] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const login = async () => {
     setError("");
@@ -80,54 +81,79 @@ function BookRide() {
     <div className="container">
       <h2>Smart Cab Booking System</h2>
 
-      {!isLoggedIn ? (
-        <div>
-          <button onClick={() => setIsRegistering(!isRegistering)}>
+      {!isLoggedIn ? 
+      (
+        <div className="regorlog">
+          <button className="btn" onClick={() => setIsRegistering(!isRegistering)}>
             {isRegistering ? "Already have an account? Login" : "New user? Register"}
           </button>
-          {isRegistering ? (
-            <div>
+          {isRegistering ? 
+          (
+            <div className="register">
               <h3>Register</h3>
               <input
                 type="text"
                 placeholder="Name"
                 value={name}
                 onChange={e => setName(e.target.value)}
+                id="name"
               />
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                id="email"
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
-              <button onClick={register}>Register</button>
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  id="password"
+                />
+                <span
+                  className="eye-icon"
+                  onClick={() => setShowPassword(!showPassword)}
+                  >
+                  {showPassword ? "🙈" : "👁️"}
+                </span>
+              </div>
+              <button className="btn" onClick={register}>Register</button>
             </div>
-          ) : (
-            <div>
+          ) : 
+          (
+            <div id="login">
               <h3>Login</h3>
               <input
                 type="email"
                 placeholder="Email"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
+                id="email"
               />
-              <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-              />
-              <button onClick={login}>Login</button>
+              <div className="password-wrapper">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  id="password"
+                />
+                <span
+                  className="eye-icon"
+                  onClick={() => setShowPassword(!showPassword)}
+                  >
+                  {showPassword ? "👁️" : "🙈"}
+                </span>
+              </div>
+              <button className="btn" onClick={login}>Login</button>
             </div>
           )}
         </div>
-      ) : (
+      ) : 
+      (
         <div>
           <h3>Book Ride</h3>
           <input

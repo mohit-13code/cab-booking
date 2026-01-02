@@ -12,9 +12,11 @@ body {
 }
 
 input {
-  width: 100%;
+  width:340.8px ;
   padding: 8px;
   margin: 8px 0;
+  transition: all 0.5s;
+
 }
 
 button {
@@ -22,8 +24,25 @@ button {
   padding: 8px;
   margin-top: 10px;
   cursor: pointer;
+  background-color:rgb(255, 217, 0);
+  border-radius: 21.3333px;
+  transition: all 0.5s;
 }
 
+button:hover {
+  background-color: rgb(215, 184, 7);
+  scale: 1.1;
+}
+#name {
+  width:340.8px;
+}
+input:hover {
+  scale: 1.05;
+}
+
+#password {
+  width:340.8px;
+}
 .result {
   margin-top: 15px;
   padding: 10px;
@@ -33,4 +52,22 @@ button {
 .error {
   margin-top: 10px;
   color: red;
+}
+
+.password-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrapper input {
+  width: 100%;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
 }
