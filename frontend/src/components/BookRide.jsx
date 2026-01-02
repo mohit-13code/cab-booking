@@ -16,7 +16,7 @@ function BookRide() {
   const login = async () => {
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/users/login", {
+      const res = await fetch("https://cab-booking-4sr4.onrender.com/api/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -35,7 +35,7 @@ function BookRide() {
   const register = async () => {
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/users/register", {
+      const res = await fetch("https://cab-booking-4sr4.onrender.com/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -56,7 +56,7 @@ function BookRide() {
     setResponse(null);
 
     try {
-      const res = await fetch("http://localhost:5000/api/rides/request", {
+      const res = await fetch("https://cab-booking-4sr4.onrender.com/api/rides/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
