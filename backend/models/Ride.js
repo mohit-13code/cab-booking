@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const rideSchema = new mongoose.Schema({
   userId: String,
+  user:String,
   driverId: String,
   driver:String,
   sourceNode: Number,

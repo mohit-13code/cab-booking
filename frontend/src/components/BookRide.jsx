@@ -117,7 +117,7 @@ function BookRide() {
                   className="eye-icon"
                   onClick={() => setShowPassword(!showPassword)}
                   >
-                  {showPassword ? "🙈" : "👁️"}
+                  {showPassword ? "👁️" : "🙈"}
                 </span>
               </div>
               <button className="btn" onClick={register}>Register</button>

@@ -50,6 +50,7 @@ router.post("/request", auth, async (req, res) => {
   
   const ride = new Ride({
     userId,
+    user:req.user.name,
     driverId: nearestDriver._id,
     driver: nearestDriver.name,
     sourceNode,

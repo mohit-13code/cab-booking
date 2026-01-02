@@ -39,7 +39,7 @@ function generateUndirectedGraph(maxNodes) {
 
 
 const graph = generateUndirectedGraph(11);
-
+//Now it Generates graph of 11 nodes(0-10)
 // console.log("Undirected Graph Object:");
 // console.log(graph);
 module.exports = graph;
