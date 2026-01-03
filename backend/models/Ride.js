@@ -5,6 +5,7 @@ const rideSchema = new mongoose.Schema({
   user:String,
   driverId: String,
   driver:String,
+  phone: Number,
   sourceNode: Number,
   destinationNode: Number,
   comingFare: Number,
