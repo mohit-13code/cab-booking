@@ -179,6 +179,7 @@ function BookRide() {
           <p><b>Driver ID:</b> {response.driverId}</p>
           <p><b>Driver Name:</b> {response.driver}</p>
           <p><b>Fare:</b> ₹{response.comingFare}+₹{response.totalFare - response.comingFare}=₹{response.totalFare}</p>
+          <p><b>Phone:</b>📞{response.phone}</p>
         </div>
       )}
     </div>

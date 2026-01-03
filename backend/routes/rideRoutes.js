@@ -53,6 +53,7 @@ router.post("/request", auth, async (req, res) => {
     user:req.user.name,
     driverId: nearestDriver._id,
     driver: nearestDriver.name,
+    phone:nearestDriver.phone,
     sourceNode,
     destinationNode,
     comingFare,
